@@ -19,11 +19,11 @@ module.exports = {
         
         if(req.query.status.includes('success')) {
             return res.render('success',{
-                paymentId: payment_id,
-                paymentType: payment_type,
-                status: collection_status,
-                prefeenceId: preference_id,
-                extReference: external_reference
+                paymentId: req.query.payment_id,
+                paymentType: req.query.payment_type,
+                status: req.query.collection_status,
+                prefeenceId: req.query.preference_id,
+                extReference: req.query.external_reference
             })
         }
 
@@ -39,8 +39,7 @@ module.exports = {
     
     },
     notifications: (req,res) => {
-        console.log(req.body)
-
+        console.log(webhook, req.body)
 
         res.status(200).end('Ok')
     },
