@@ -18,7 +18,13 @@ module.exports = {
         console.log(req.query)
         
         if(req.query.status.includes('success')) {
-            return res.render('success')
+            return res.render('success',{
+                paymentId: payment_id,
+                paymentType: payment_type,
+                status: collection_status,
+                prefeenceId: preference_id,
+                extReference: external_reference
+            })
         }
 
         if(req.query.status.includes('pending')) {
