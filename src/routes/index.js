@@ -9,4 +9,11 @@ router.get('/', indexController.home);
 /* GET detail page */
 router.get('/detail', indexController.detail);
 
+router.get('/callback', indexController.callback);
+
+router.post('/notifications', indexController.notifications);
+
+/* POST comprar */
+router.post('/comprar', indexController.comprar);
+
 module.exports = router;

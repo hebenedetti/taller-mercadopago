@@ -6,7 +6,7 @@
 	<!-- Header -->
 	<%- include('partials/headerNavbar') %>
 	<!-- /Header -->
-
+	
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -25,9 +25,9 @@
 				<div class="col-12 col-lg-4">
 					<article class="product-detail-info">
 						<h2 class="product-detail-title"><%= title %></h2>
-							<p class="product-detail-price">
-								$<%= price %>
-							</p>
+						<p class="product-detail-price">
+							$<%= price %>
+						</p>
 						<ul class="actions-list">
 							<li>
 								<i class="fas fa-credit-card"></i>
@@ -38,11 +38,13 @@
 								<p>Retiro gratis en locales del vendedor</p>
 							</li>
 						</ul>
-
+						
 						<div class="mercadopago-button-container">
-							<button class="mercadopago-button">
-								Pagar la compra
-							</button>
+							<form action="/comprar" method="POST">
+								<button class="mercadopago-button">
+									Pagar la compra
+								</button>
+							</form>
 						</div>
 					</article>
 				</div>
@@ -50,10 +52,10 @@
 		</div>
 	</div>
 	<!-- /product detail -->
-
+	
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->
-
+	
 </body>	
 </html>
