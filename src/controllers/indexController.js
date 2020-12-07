@@ -22,7 +22,7 @@ module.exports = {
                 paymentId: req.query.payment_id,
                 paymentType: req.query.payment_type,
                 status: req.query.collection_status,
-                prefeenceId: req.query.preference_id,
+                preferenceId: req.query.preference_id,
                 extReference: req.query.external_reference
             })
         }
