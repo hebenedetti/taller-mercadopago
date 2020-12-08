@@ -46,6 +46,9 @@ module.exports = {
     },
     comprar: (req,res) => {
 
+        //Host de pruebas
+        //const host = 'http://localhost:3000/'
+        //Host de produccion
         const host = 'https://taller-mp.herokuapp.com/'
 
         const url = host + 'callback?status='
@@ -63,38 +66,38 @@ module.exports = {
             "auto_return": 'approved',
 
             payer: {
-                name: 'Ryan',
-                surname: 'Dahl',
+                name: 'Lalo',
+                surname: 'Landa',
                 email: 'test_user_63274575@testuser.com',
                 phone: {
                     area_code: '11',
-                    number: 55556666
+                    number: 22223333
                 },
                 address: {
-                    street_name: 'Monroe',
-                    street_number: 860,
-                    zip_code: '1234'
+                    street_name: 'False',
+                    street_number: 123,
+                    zip_code: '1111'
                 }
             },
 
             payment_methods:{
                 excluded_payment_methods: [
-                    {id: 'visa'}
+                    {id: 'amex'}
                 ],
                 excluded_payment_types: [
                     {id: 'atm'}
                 ],
-                installments: 12
+                installments: 6
 
             },
 
             items: [
                 {
-                    id: 1234,
-                    picture_url: 'https://mercadopago12345.herokuapp.com/images/products/jordan.jpg',
-                    title: 'Nombre del producto',
+                    id: '1234',
+                    picture_url: 'https://taller-mp.herokuapp.com/images/products/' + req.body.img,
+                    title: req.body.title,
                     description: 'Dispositivo móvil de Tienda e-commerce',
-                    unit_price: 999,
+                    unit_price: parseFloat(req.body.price),
                     quantity: 1
                 }
             ],

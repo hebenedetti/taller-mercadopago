@@ -41,7 +41,11 @@
 						
 						<div class="mercadopago-button-container">
 							<form action="/comprar" method="POST">
-								<button class="mercadopago-button">
+								<input type="hidden" name="img" value="<%= img %>">
+              					<input type="hidden" name="title" value="<%= title %>">
+              					<input type="hidden" name="price" value="<%= price %>">
+              					<input type="hidden" name="unit" value="1">
+								<button type="submit" class="mercadopago-button">
 									Pagar la compra
 								</button>
 							</form>
@@ -56,6 +60,6 @@
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->
-	
+	<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
 </body>	
 </html>
